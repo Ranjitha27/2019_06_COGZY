@@ -1,9 +1,43 @@
 ### Assignment 1
 
-1. Write a brief history of Java Programming Language
-2. Explain Primitive types in Java
-3. What are the different programming constructs in java? Explain with examples.
+1. Write a brief history of Java Programming Language?
+  1.Java is developed by James Gosling and colleagues at sun microsystems in 1990.
+  2.Java was started as a project by OAK by james gosling in 1991.
+  3.Java is a general purpose & it is a platform independent programming language.
+  4.Java code can run on all platforms that support java without the need for recomplilation.
+  5.Java applications are compiled to bytecode that can run on any java virtual machine.
+  6.The principles for creating java programming were Simple,Robust,portable,secured,high performace, multithreaded,
+     Object oriented,Interpreted & dynamic. 
+  7.Currently java is used in internet programming,games,mobile devices,Smart cards,game cards,desktop,etc....
+  8.Java is "Write Once Run Everywhere" language for all types of os.
 
+----------
+
+2. Explain Primitive types in Java?
+    There are 8 primitive data types in java
+    
+    DataType    Size     
+  1. byte       1byte
+  2. short      2bytes
+  3. int        4bytes
+  4. long       8bytes
+  5. float      4bytes
+  6. double     8bytes
+  7. boolean    1bit
+  8. char       2bytes
+  
+-------------
+  
+ 3. What are the different programming constructs in java? Explain with examples?
+     There are 3 programming constructs in java
+     1.Sequence :- The sequence constructs is a set of instructions that are in order, one instruction aftr the other,
+     once one instruction has to been executed.
+     eg:- break & goto statment
+     2.Selection :- It allows more than one possible flow of control, it also decision statments
+     eg:- if statment
+     3. Iteration :- iteration is a compuer loop that goes through a group of instructions which gets executed over & over again.
+     eg :- while loop & do-while loop
+     
 ---
 
 ### Assignment 2
@@ -38,8 +72,30 @@ Write a Java program to call the above function multiple times with different va
 Implement the body for the following function:
 
 ````java
-static boolean isPrimeNumber(int num) { 
-	// do stuff here
+static boolean isPrimeNumber(int num)
+{ 
+    int i;
+    for( i=1;i<=num;i++)
+    {
+      Scanner sc = new Scanner(System.in);
+      System.out.println("enter a number");
+      num=sc.nextInt();
+       isPrimeNumber=true;
+       
+       if(num==1)
+       isPrimeNumber=false;
+       
+       for( i=2;i<num;i++)
+       {
+         if(num%i==0)
+	 { 
+	   isPrimeNumber=false;
+	 }
+       }
+       if(isPrimeNumber)
+       System.out.println(num);
+       return true;
+     }
 	return false; 
 }
 ````
@@ -56,10 +112,33 @@ Write a Java program to call the above function multiple times with different va
 Write a function called "sortThreeNumbers", which takes 3 distinct integers and prints them in ascending order.
 
 ````java
-public void sortThreeNumbers(int a, int b, int c) { 
-	// do stuff here
-}
-
+public void sortThreeNumbers(int a, int b, int c)
+{ 
+   Scanner sc=new Scanner(System.in);
+   System.out.println("Enter the 3 integers to be sorted");
+   a=sc.nextInt();
+   b=sc.nextInt();
+   c=sc.nextInt();
+   
+   if((a>=b && a>=c) && b>=c)
+   System.out.println("sorted numbers are %d %d %d", c,b,a);
+   
+   else if((a>=b && a>=c) && c>=b)
+   System.out.println("sorted numbers are %d %d %d", b,c,a);
+   
+   else if((b>=a && b>=c) && a>=c)
+   System.out.println("sorted numbers are %d %d %d", c,a,b);
+   
+   else if((b>=a && b>=c) && c>=a)
+   System.out.println("sorted numbers are %d %d %d", a,c,b);
+   
+   else if((c>=b && c>=a) && b>=a)
+   System.out.println("sorted numbers are %d %d %d", a,b,c);
+   
+   else if((c>=b && c>=a) && a>=b)
+   System.out.println("sorted numbers are %d %d %d", b,a,c);
+  }
+ }
 ````
 For example,
 
@@ -97,8 +176,23 @@ In mathematics, the Fibonacci numbers are the numbers in the following integer s
 Write a function called "fibonacci", that takes index as paramter and returns the fibonacci number at that index.
 
 ````java
-public int fibonacci(int index) { 
-	// do stuff here
+public int fibonacci(int index) 
+{ 
+  Scanner sc=new Scanner(System.in);
+  int a=0,b=0,c=1;
+
+  System.out.println("input the numbers");
+  index=sc.nextInt();
+
+  System.out.println("fibonacci series of a numbers");
+  for(int i=0;i<=index;i++)
+   {
+    a=b;
+    b=c;
+    c=a+b;
+
+    System.out.println(a+"");
+    }
 	return 0; 
 }
 ````
@@ -118,8 +212,21 @@ Write a Java program to print the following pattern:
 ````
 
 The number of rows should be based on the value of a variable "num", and the number of stars in a row is based on the row number itself.
-
-
+public class r
+{
+ public static void main(String[] args)
+ {
+  for(int i=1;i<=5;i++)
+  {
+    for(int j=0;j<i;j++)
+     {
+      System.out.print("*");
+     }
+      System.out.println("");
+   }
+ }
+} 
+ 
 ---
 
 ### Assignment 8
@@ -172,9 +279,34 @@ PS:
 Write a function called "sumOfEvensAndOdds", that takes an array of integers as input and returns another array of integers of length 2. The first element in the returned array is the sum of all even numbers in the input array, and the second element in the returned array is the sum of all odd numbers in the input array.
 
 ````java
-public int[] sumOfEvensAndOdds(int []nums) { 
-	// do stuff here
-	return null;
+public int[] sumOfEvensAndOdds(int []nums)
+{ 
+  int n,sumeven=0, sumodd=0;
+  Scanner sc = new Scanner(System.in);
+  System.out.println("enter the numbers");
+  n=sc.nextInt();
+  
+ int[] nums = new int[n];
+ System.out.println("enter the elements of the array");
+ for(int i=0;i<n;i++)
+ {
+   a[i]=sc.nextInt();
+ }
+   for(int i=0;i<n;i++)
+   {
+     if(a[i]%2==0)
+     {
+       sumeven = sumeven + a[i];
+     }
+     else
+     {
+       sumodd = sumodd + a[i];
+     }
+   }
+   System.out.println("sum of even numbers:"+sumeven);
+   System.out.println("sum of odd numbers:"+sumodd);
+   
+  return null;
 }
 ````
 
